@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Procurement Dashboard</title>
+    <link rel="stylesheet" href="css/homepage.css">
+	<link rel="stylesheet" href="css/managerpage.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+		<div class="logo-container">
+		    <img src="images/CTSlogo.png" alt="Logo" class="logo">
+		</div>
+		<h1 class="heading"><a href="manager">Procurement Management System</a></h1>
+        <nav>
+            <ul>
+				<li><button id="displayRequisitions">Display Requisitions</button></li>
+                <li><a href="apporrej">Approve/Reject</a></li>
+                <li><a href="login">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to the Procurement Dashboard</h2>
+        </section>
+        <section class="modules">
+            <div class="module-card">
+                <h3>Create Purchase Requisition</h3>
+                <p>Initiate a new purchase requisition request.</p>
+            </div>
+            <div class="module-card">
+                <h3>Add Purchase Requisition Lines</h3>
+                <p>Add item details to your requisition.</p>
+            </div>
+            <div class="module-card">
+                <h3>Approve/Reject Purchase Requisition</h3>
+                <p>Manage pending purchase requisitions.</p>
+            </div>
+            <div class="module-card">
+                <h3>Create Purchase Order</h3>
+                <p>Generate purchase orders from approved requisitions.</p>
+            </div>
+            <div class="module-card">
+                <h3>Get Status of Purchase Requisition</h3>
+                <p>Check the current status of your requisitions.</p>
+            </div>
+        </section>
+		<section class="requisitions">
+		    <table id="requisitionsTable" style="display:none;">
+				<caption>PURCHASE REQUISITIONS</caption>
+		        <thead>
+		            <tr>
+		                <th>Requisition ID</th>
+		                <th>Requested By</th>
+						<th>Requested Date</th>
+						<th>Expected Date</th>
+		                <th>Manager Name</th>
+		                <th>Vendor Name</th>
+		                <th>Status</th>
+						<th>Take Action</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <!-- Data will be populated here -->
+		        </tbody>
+		    </table>
+		</section>
+    </main>
+
+    <footer>
+		<p>&copy; 2025 Procurement Corp. All rights reserved.</p>
+    </footer>
+
+    <script src="js/homepage.js"></script>
+</body>
+
+</html>

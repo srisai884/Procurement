@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Purchase Requisition</title>
+    <link rel="stylesheet" href="css/requisition.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+	<header>
+		<div class="logo-container">
+		    <img src="images/CTSlogo.png" alt="Logo" class="logo">
+		</div>
+		<h1><a href="admin">Procurement Management System</a></h1>
+	       <nav>
+	           <ul>
+	               <li><a href="requisition">Create PR</a></li>
+	               <li><a href="requisitionlines">Add Products</a></li>
+	               <li><a href="purchaseorder">Create PO</a></li>
+	               <li><a href="getstatus">Get Status</a></li>
+	               <li><a href="login">Log Out</a></li>
+	           </ul>
+	       </nav>
+	   </header>
+    <main>
+        <div class="requisition-container">
+            <h2>Create Purchase Requisition</h2>
+            <form id="requisitionForm">
+                <div class="input-group">
+                    <label for="requestedBy">Requested By</label>
+                    <input type="text" id="requestedBy" name="requestedBy" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="requestedDate">Requested Date</label>
+                    <input type="date" id="requestedDate" name="requestedDate" required>
+                </div>
+                <div class="input-group">
+                    <label for="expectedDate">Expected Date</label>
+                    <input type="date" id="expectedDate" name="expectedDate" required>
+					<div id="message"></div>
+                </div>
+				<div class="input-group">
+				    <label for="managerId">Manager</label>
+				    <input type="text" id="managerId" name="managerId" readonly>
+				</div>
+                <div class="input-group">
+                    <label for="vendorName">Vendor</label>
+                    <select id="vendorName" name="vendorName" required>
+						<option>Select Vendor</option>
+					</select>
+                </div>
+                <div class="input-group">
+                    <label for="status">Status</label>
+                    <input type="text" id="status" name="status" value="Draft" readonly>
+                </div>
+                <input type="hidden" id="requisitionId" name="requisitionId"><br>
+                <div class="button-group">
+                    <button type="button" onclick="saveRequisition()" class="save">Save</button>
+                    <button type="button" onclick="submitRequisition()" class="submit">Submit</button>
+                    <button type="button" onclick="cancelRequisition()" class="cancel">Cancel</button>
+                </div>
+            </form>
+            <div id="message"></div>
+        </div>
+		<div id="requisitionTableContainer" style="display:none;">
+		    <table id="requisitionTable">
+				<caption>PURCHASE REQUISITION</caption>
+		        <thead>
+		            <tr>
+						<th>Requisition ID</th>
+		                <th>Requested By</th>
+		                <th>Requested Date</th>
+		                <th>Expected Date</th>
+		                <th>Manager</th>
+		                <th>Vendor</th>
+		                <th>Status</th>
+		                <th>ADD</th>
+						<th>DELETE</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <!-- Rows will be added dynamically here -->
+		        </tbody>
+		    </table>
+		</div>
+    </main>
+    <footer>
+		<p>&copy; 2025 Procurement Corp. All rights reserved.</p>
+    </footer>
+    <script src="js/requisition.js"></script>
+</body>
+</html>

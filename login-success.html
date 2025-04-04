@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Successful - Procurement Management System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const role = urlParams.get('role');
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                text: 'You will be redirected shortly.',
+                showConfirmButton: false,
+                timer: 1000
+            }).then(() => {
+                // Redirect based on role
+                if (role === 'ADMIN') {
+                    window.location.href = '/admin';
+                } else if (role === 'MANAGER') {
+                    window.location.href = '/manager';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

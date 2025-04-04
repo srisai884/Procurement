@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve/Reject Purchase Requisitions</title>
+    <link rel="stylesheet" href="css/apporrej.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+	<header>
+		<div class="logo-container">
+		    <img src="images/CTSlogo.png" alt="Logo" class="logo">
+		</div>
+		<h1><a href="manager">Procurement Management System</a></h1>
+	       <nav>
+	           <ul>
+				<li><a href="apporrej">Approve/Reject</a></li>
+				<li><a href="login">Log Out</a></li>
+	           </ul>
+	       </nav>
+	   </header>
+    <main>
+        <div class="search-container">
+            <h2>Approve/Reject Purchase Requisitions</h2>
+            <form id="searchForm">
+				<div class="input-group">
+				    <label for="requisitionId">Requisition ID:</label>
+				    <select id="requisitionId">
+				        <option>Select Requisition ID</option>
+				    </select>
+				</div>
+                <div class="input-group">
+                    <label for="requestedBy">Requested By:</label>
+                    <select id="requestedBy">
+                        <option>Select Requested By</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="requestedDate">Requested Date:</label>
+                    <input type="date" id="requestedDate">
+                </div>
+                <div class="button-group">
+                    <button type="button" id="searchButton" class="search">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <table id="resultsTable">
+				<caption>Purchase Requisitions</caption>
+				<thead>
+				    <tr>
+				        <th>Requisition ID</th>
+				        <th>Requested By</th>
+				        <th>Requested Date</th>
+						<th>Expected Date</th>
+				        <th>Manager</th>
+						<th>Vendor</th>
+				        <th>View Products</th>
+				        <th>Approve</th>
+				        <th>Reject</th>
+				    </tr>
+				</thead>
+                <tbody>
+                    <!-- Results will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+        <div id="detailsContainer">
+            <!-- Product details will be displayed here -->
+        </div>
+		<div id="approvedRejectedContainer" style="display: none;">
+		    <table id="approvedRejectedTable">
+		        <caption>Approved/Rejected Requisitions</caption>
+		        <thead>
+		            <tr>
+		                <th>Requisition ID</th>
+		                <th>Requested By</th>
+		                <th>Requested Date</th>
+						<th>Expected Date</th>
+		                <th>Manager</th>
+						<th>Vendor</th>
+		                <th>View Products</th>
+		                <th>Action</th>
+		            </tr>
+		        </thead>
+		        <tbody></tbody>
+		    </table>
+		</div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Procurement Corp. All rights reserved.</p>
+    </footer>
+    <script src="js/apporrej.js"></script>
+</body>
+</html>
